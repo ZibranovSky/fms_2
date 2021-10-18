@@ -1,0 +1,34 @@
+file_name
+file_desc
+file_sutradara
+file_topik
+file_tahun_terbit
+file_penulis_nc
+file_valid
+
+
+SELECT *
+FROM `arsipdigitaldb_files`
+WHERE `file_status` LIKE 'j1'
+
+SELECT SUBSTR( file_name, 5, 8 ) AS Kode, file_desc, file_topik, file_penulis_nc, file_tahun_terbit, file_penulis, file_edisi, file_status_cetak
+FROM arsipdigitaldb_files
+WHERE file_status = 'J3' or  file_status = 'J4' or  file_status = 'J5' or file_status = 'J6' or file_status = 'J7' or
+ file_status = 'J8' or file_status = 'J11' or file_status = 'J12'; 
+
+
+SELECT file_name, jenis_name, file_desc, file_topik, file_penulis_nc, file_tahun_terbit, file_penulis, file_edisi, file_status_cetak
+FROM arsipdigitaldb_files join arsipdigitaldb_jenis on  arsipdigitaldb_files.file_status = arsipdigitaldb_jenis.jenis_id
+WHERE file_status = 'J3' or  file_status = 'J4' or  file_status = 'J5' or file_status = 'J6' or file_status = 'J7' or
+ file_status = 'J8' or file_status = 'J11' or file_status = 'J12'; 
+
+
+cetak
+BMP
+Bnbb
+
+no cetak
+j3,j4,5,6,7,8,11,12,
+
+
+
